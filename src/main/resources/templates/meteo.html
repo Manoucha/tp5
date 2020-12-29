@@ -15,14 +15,16 @@
 
 <body>
 
-
-The address is  : <p th:text=" ${adresse} "/>
-<p GPS coordinates : />
-Latitude : <p th:text=" ${ lat } "/>
-Longitude : <p th:text=" ${ lon } "/>
-Feels like : <p th:text=" ${ meteo } "/>
-Temperature : <p th:text=" ${ temp } "/>
-	
+<div class="card" style="width: 150rem;">
+    <div class="card-body">
+<p style="color:red; font-family:verdana; font-size:15px "> The address is  : </p> <p th:text=" ${adresse} "/>
+<p style="color:red; font-family:verdana; font-size:15px ">  GPS coordinates : </p>
+ <p style="color:blue; font-family:verdana; font-size:13px "> Latitude : <p th:text=" ${ lat } "/>
+<p style="color:blue; font-family:verdana; font-size:13px "> Longitude : <p th:text=" ${ lon } "/>
+<p style="color:red; font-family:verdana; font-size:15px "> Feels like :  <p th:text=" ${ meteo } "/>
+<p style="color:red; font-family:verdana; font-size:15px ">Temperature : <p th:text=" ${ temp } "/>
+	</div>
+	</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>  
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
 

@@ -24,17 +24,15 @@ public class MeteoController {
 
 
     @PostMapping("/meteo")
-    public String getMeteo(@RequestParam( name ="adresse", required=true) String adresse, Model model) {
+    public String getMeteoGPS(@RequestParam( name ="adresse", required=true) String adresse, Model model) {
 		String url = String.format("https://api-adresse.data.gouv.fr/search/?q=\"%s\"&limit=1", adresse);
 
-        // get coords GPS from apigouv
         RestTemplate restTemplate = new RestTemplate();
         Apiadresse adresseResponse = restTemplate.getForObject(url , Apiadresse.class);
 
         Float lat = adresseResponse.getFeatures().get(0).getGeometry().getCoordinates().get(1);
         Float lon = adresseResponse.getFeatures().get(0).getGeometry().getCoordinates().get(0);
 
-        //[latitude],[longitude]
         
         url = String.format("http://api.openweathermap.org/data/2.5/weather?lon=%f&lat=%f&appid=%s&lang=fr&units=metric", lat, lon, MeteoController.KEY_API );
         WeatherResult reponse_meteo = new RestTemplate().getForObject(url, WeatherResult.class);
