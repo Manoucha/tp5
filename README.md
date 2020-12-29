@@ -32,8 +32,34 @@ Thymeleaf est une bibliothèque Java. Il s'agit d'un moteur de template XML / XH
 
 Réponse étape 13 :
 
- 1- @GetMapping("/greeting")
- 2- return "greeting";
- 3- on le récupere avec : @RequestParam(name="name",required=false, defaultValue="World") et on l'envoie avec : model.addAttribute("nomTemplate", nameGET);
+ - 1- @GetMapping("/greeting")
+ - 2- return "greeting";
+ - 3- on le récupere avec : @RequestParam(name="name",required=false, defaultValue="World") et on l'envoie avec : model.addAttribute("nomTemplate", nameGET);
+
+
+Réponse étape 17 :
+
+La table adresse a été créé
+
+Réponse étape 18 : 
+
+Grâca aux annotation ajoutées Hibernate accéde à la base de donnée et créer la table . 
+
+Réponse étape 20 :
+
+Oui on voit tous le contenus de la table adresse .
+
+Réponse étape 23 :
+
+@Autowire : Annotation qui  permet de faire l’injection de dépendances entre les beans de l’application . 
+
+Réponse étape 6 partie 2 : 
+
+ * oui il faut une clé API pour appeler OpenWeatherMap
+ * http://api.openweathermap.org/data/2.5/weather?lon=%f&lat=%f&appid=%s&lang=fr&units=metric
+ * POST 
+ * url = String.format("http://api.openweathermap.org/data/2.5/weather?lon=%f&lat=%f&appid=%s&lang=fr&units=metric", lat, lon, MeteoController.KEY_API );
+ * pour la temperature on la trouve dans : main --> temp 
+ * pour la prévision on la trouve dans : weather --> description
 
 
